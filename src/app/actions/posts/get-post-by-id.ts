@@ -3,7 +3,6 @@
 import { cacheTag, cacheLife } from 'next/cache';
 
 export async function getPostById(id: string) {
-	// Tag za pojedinačan post
 	cacheTag(`post-${id}`);
 
 	cacheLife({
@@ -13,6 +12,7 @@ export async function getPostById(id: string) {
 	});
 
 	const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+
 	return res.json();
 }
 
