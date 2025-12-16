@@ -14,7 +14,7 @@ export async function getPosts() {
 		expire: 300
 	});
 
-	await sleep(12000);
+	await sleep(5000);
 
 	const posts = await fetchPosts();
 	const duration = Math.round(performance.now() - start);

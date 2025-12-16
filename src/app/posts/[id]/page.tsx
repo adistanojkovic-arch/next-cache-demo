@@ -1,25 +1,23 @@
 import Link from 'next/link';
-import { getPostById } from '@/app/actions/posts/get-post-by-id';
+import { Suspense } from 'react';
+import PostDetailsSection from './post-details';
 
-type PostDetailsProps = {
+type PageProps = {
 	params: Promise<{
 		id: string;
 	}>;
 };
 
-export default async function PostDetails({ params }: PostDetailsProps) {
-	const { id } = await params;
-	const post = await getPostById(id);
-
+export default function PostDetailsPage({ params }: PageProps) {
 	return (
-		<div className="p-8 space-y-4">
+		<div className="p-8 space-y-6">
 			<Link href="/posts" className="text-blue-600 hover:underline">
 				← Back
 			</Link>
 
-			<h1 className="text-3xl font-bold">{post.title}</h1>
-
-			<p className="text-lg text-gray-700 whitespace-pre-line">{post.body}</p>
+			<Suspense fallback={<p className="text-gray-400">Loading post…</p>}>
+				<PostDetailsSection params={params} />
+			</Suspense>
 		</div>
 	);
 }
