@@ -13,7 +13,6 @@ export async function getPostsNoCache() {
 	return {
 		posts,
 		duration,
-		fetchedAt: new Date().toISOString(),
 		mode: 'NO CACHE'
 	};
 }

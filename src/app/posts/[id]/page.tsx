@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Suspense } from 'react';
 import PostDetailsSection from './post-details';
+import { ArrowLeft } from 'lucide-react';
 
 type PageProps = {
 	params: Promise<{
@@ -10,9 +11,10 @@ type PageProps = {
 
 export default function PostDetailsPage({ params }: PageProps) {
 	return (
-		<div className="p-8 space-y-6">
-			<Link href="/posts" className="text-blue-600 hover:underline">
-				← Back
+		<div className="space-y-6">
+			<Link href="/posts" className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900">
+				<ArrowLeft size={16} />
+				<span>Back to posts</span>
 			</Link>
 			<Suspense fallback={<p className="text-gray-400">Loading post…</p>}>
 				<PostDetailsSection params={params} />

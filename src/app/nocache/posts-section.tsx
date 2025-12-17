@@ -1,7 +1,7 @@
 import { getPostsNoCache } from '../actions/posts/get-posts-no-cache';
 
 export default async function NoCachePostsSection() {
-	const { posts, duration, fetchedAt } = await getPostsNoCache();
+	const { posts, duration } = await getPostsNoCache();
 
 	return (
 		<>

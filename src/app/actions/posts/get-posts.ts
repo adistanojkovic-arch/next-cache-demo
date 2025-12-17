@@ -22,7 +22,6 @@ export async function getPosts() {
 	return {
 		posts,
 		duration,
-		fetchedAt: new Date().toISOString(),
 		mode: 'CACHE'
 	};
 }

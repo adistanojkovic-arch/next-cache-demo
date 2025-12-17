@@ -11,10 +11,15 @@ export default async function PostDetailsSection({ params }: Props) {
 	const post = await getPostById(id);
 
 	return (
-		<>
-			<h1 className="text-3xl font-bold">{post.title}</h1>
-			<p className="mt-4 text-lg text-gray-700 whitespace-pre-line">{post.body}</p>
-		</>
+		<div className="max-w-2xl space-y-4">
+			<article className="border rounded-lg bg-white p-6 shadow-sm space-y-4">
+				<h1 className="text-3xl font-bold tracking-tight">{post.title}</h1>
+
+				<div className="h-px bg-gray-200" />
+
+				<p className="text-lg text-gray-700 whitespace-pre-line leading-relaxed">{post.body}</p>
+			</article>
+		</div>
 	);
 }
 
