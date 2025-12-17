@@ -13,7 +13,6 @@ export default async function PostDetailsSection({ params }: Props) {
 	return (
 		<>
 			<h1 className="text-3xl font-bold">{post.title}</h1>
-
 			<p className="mt-4 text-lg text-gray-700 whitespace-pre-line">{post.body}</p>
 		</>
 	);

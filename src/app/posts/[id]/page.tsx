@@ -14,7 +14,6 @@ export default function PostDetailsPage({ params }: PageProps) {
 			<Link href="/posts" className="text-blue-600 hover:underline">
 				← Back
 			</Link>
-
 			<Suspense fallback={<p className="text-gray-400">Loading post…</p>}>
 				<PostDetailsSection params={params} />
 			</Suspense>
