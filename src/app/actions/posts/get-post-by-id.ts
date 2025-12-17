@@ -1,5 +1,6 @@
 'use cache: remote';
 
+import { constants } from '@/app/const';
 import { cacheTag, cacheLife } from 'next/cache';
 
 export async function getPostById(id: string) {
@@ -11,7 +12,7 @@ export async function getPostById(id: string) {
 		expire: 86400 // 24h
 	});
 
-	const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+	const res = await fetch(`${constants.api}/posts/${id}`);
 
 	return res.json();
 }

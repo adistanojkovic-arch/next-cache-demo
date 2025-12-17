@@ -18,8 +18,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 							<Link href="/nocache" className="font-semibold hover:underline">
 								No cache
 							</Link>
-							<Link href="/posts-full" className="font-semibold hover:underline">
-								Posts - full (TanStack Query)
+							<Link href="/comments" className="font-semibold hover:underline">
+								Comments (TanStack Query)
 							</Link>
 						</div>
 					</nav>

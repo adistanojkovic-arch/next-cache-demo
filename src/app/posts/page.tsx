@@ -1,6 +1,6 @@
 import { getPosts } from '../actions/posts/get-posts';
 import { refreshPosts } from '../actions/posts/refresh-posts';
-import PostsListClient from '../components/posts-list-client';
+import PostsListClient from './posts-list-client';
 import RefreshButton from './refresh-button';
 
 export default async function PostsPage() {
