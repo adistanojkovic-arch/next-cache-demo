@@ -9,7 +9,7 @@ export async function getPosts() {
 
 	cacheTag('posts-list');
 	cacheLife({
-		stale: 30,
+		stale: 0,
 		revalidate: 60,
 		expire: 300
 	});

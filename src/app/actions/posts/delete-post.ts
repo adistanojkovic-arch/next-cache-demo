@@ -1,7 +1,7 @@
 'use server';
 
 import { constants } from '@/app/const';
-import { revalidateTag } from 'next/cache';
+import { updateTag } from 'next/cache';
 
 export async function deletePost(id: string) {
 	const res = await fetch(`${constants.api}/posts/${id}`, {
@@ -12,6 +12,6 @@ export async function deletePost(id: string) {
 		throw new Error('Failed to delete post');
 	}
 
-	revalidateTag('posts-list', 'max');
+	updateTag('posts-list');
 }
 
