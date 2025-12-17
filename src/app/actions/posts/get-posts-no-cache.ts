@@ -6,7 +6,7 @@ import { fetchPosts } from './_fetch-posts';
 export async function getPostsNoCache() {
 	const start = performance.now();
 
-	await sleep(5000);
+	await sleep(3000);
 	const posts = await fetchPosts({ cache: 'no-store' });
 	const duration = Math.round(performance.now() - start);
 
